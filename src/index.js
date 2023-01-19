@@ -15,9 +15,9 @@ app.use(cors());
 
 app.use(express.json());
 
-// app.get("/", (req, res) => res.send("welcome"));
+// app.use(express.static("public"));
+app.get("/", (req, res) => res.send("welcome to the api"));
 
-app.use(express.static("public"));
 app.use("/api", apiRouter);
 
 app.listen(port, () => console.log(`Server is up on port ${port}`));
